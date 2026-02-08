@@ -1,334 +1,348 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Y&T Postres y Desayunos — Menú</title>
-<link rel="icon" href="images/yt.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y&T Postres y Desayunos — Menú</title>
+    <link rel="icon" href="images/yt.jpg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa: #f7a8b8;
+            --vino: #d6335c;
+            --dorado: #c5a059;
+            --crema: #fff5f7;
+            --negro: #2b2b2b;
+            --verde-wa: #25d366;
+            --sombra: 0 15px 35px rgba(214, 51, 92, 0.18);
+        }
 
-<style>
-:root{
---vino:#d6335c;
---rosa:#f7a8b8;
---crema:#fff5f7;
---verde:#25d366;
---sombra:0 15px 35px rgba(214,51,92,.18);
-}
+        * { box-sizing: border-box; }
 
-*{box-sizing:border-box}
-body{
-margin:0;
-font-family:Poppins,sans-serif;
-background:radial-gradient(1200px 600px at 10% 10%,#fff0f4 0%,#fff8fb 45%,#fff 100%);
-color:#2b2b2b;
-}
-a{text-decoration:none;color:inherit}
-.container{width:min(1200px,92vw);margin:auto}
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: var(--negro);
+            background: radial-gradient(1200px 600px at 10% 10%, #fff0f4 0%, #fff8fb 45%, #ffffff 100%);
+        }
 
-/* NAV */
-.navbar{
-position:sticky;top:0;z-index:10;
-background:rgba(255,255,255,.95);
-backdrop-filter:blur(8px);
-border-bottom:1px solid rgba(214,51,92,.1);
-}
-.nav-inner{
-display:flex;justify-content:space-between;align-items:center;
-padding:14px 0
-}
-.brand{display:flex;gap:12px;align-items:center}
-.brand img{width:52px;height:52px;border-radius:50%;box-shadow:var(--sombra)}
-.brand h1{margin:0;font-family:"Playfair Display";color:var(--vino)}
-.nav-links{display:flex;gap:18px;font-weight:600}
+        a { text-decoration: none; color: inherit; }
 
-/* HERO */
-.hero{padding:60px 0}
-.hero-grid{
-display:grid;grid-template-columns:1fr 480px;gap:30px;align-items:center
-}
-.hero h2{
-font-family:"Playfair Display";
-color:var(--vino);
-font-size:clamp(2rem,4vw,2.6rem);
-}
-.hero-collage{
-display:grid;grid-template-columns:repeat(2,1fr);gap:12px
-}
-.hero-collage img{
-width:100%;height:150px;object-fit:cover;
-border-radius:16px;
-animation:float 7s ease-in-out infinite;
-box-shadow:0 12px 30px rgba(0,0,0,.15)
-}
+        .container {
+            width: min(1200px, 92vw);
+            margin: 0 auto;
+        }
 
-/* SECTIONS */
-.section{padding:60px 0}
-.section h3{
-font-family:"Playfair Display";
-color:var(--vino);
-font-size:1.7rem;
-margin-bottom:6px
-}
-.section-subtitle{color:#7c5a68}
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(214, 51, 92, 0.08);
+        }
 
-/* PAQUETES */
-.grid-2{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px
-}
-.package{
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:var(--sombra);
-display:flex;
-flex-direction:column;
-transition:.3s
-}
-.package:hover{
-transform:translateY(-6px);
-box-shadow:0 22px 45px rgba(214,51,92,.25)
-}
-.package-media{height:220px}
-.package-media img{
-width:100%;height:100%;object-fit:cover;
-animation:float 6s ease-in-out infinite
-}
-.package-content{
-padding:18px;
-display:flex;
-flex-direction:column;
-gap:10px
-}
-.package-content h4{margin:0;color:var(--vino)}
-.package-content ul{
-margin:0;padding-left:18px;color:#5a4750;font-size:.95rem
-}
-.price{
-margin-top:auto;
-font-size:1.2rem;
-font-weight:800;
-color:var(--vino)
-}
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+        }
 
-/* POSTRES */
-.desserts{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:16px
-}
-.dessert{
-background:#fff;
-border-radius:18px;
-overflow:hidden;
-box-shadow:var(--sombra);
-transition:.25s
-}
-.dessert:hover{transform:translateY(-5px)}
-.dessert img{
-width:100%;height:180px;object-fit:cover;
-animation:float 8s ease-in-out infinite
-}
-.dessert-content{padding:12px}
-.dessert-content strong{display:block}
-.dessert-content span{
-font-weight:700;color:var(--vino)
-}
+        .brand { display: flex; gap: 12px; align-items: center; }
+        .brand img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; box-shadow: var(--sombra); }
+        .brand h1 { margin: 0; font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--vino); }
+        .brand small { display: block; color: #7c5a68; font-size: 0.82rem; }
 
-/* INFO */
-.info{
-background:linear-gradient(135deg,#fff8fb,#fff2f6);
-padding:20px;border-radius:16px;
-box-shadow:0 12px 28px rgba(214,51,92,.08)
-}
+        .nav-links { display: flex; gap: 18px; font-weight: 600; }
 
-/* FOOTER */
-.footer{
-background:#2b1b22;color:#f6e9ee;
-padding:40px 0
-}
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px
-}
-.footer h5{color:#ffd7e2}
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid transparent; font-weight: 600; }
+        .btn-primary { background: linear-gradient(135deg, var(--vino), #f0557d); color: white; box-shadow: var(--sombra); }
+        .btn-outline { border-color: rgba(214, 51, 92, 0.2); color: var(--vino); background: white; }
 
-/* WHATS */
-.btn-whatsapp{
-position:fixed;bottom:18px;right:18px;
-background:var(--verde);color:#fff;
-padding:14px 18px;border-radius:999px;
-font-weight:700;box-shadow:0 10px 22px rgba(0,0,0,.2)
-}
+        .hero { padding: 50px 0 28px; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 480px; gap: 28px; align-items: center; }
+        .hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin: 0 0 12px; color: var(--vino); }
+        .hero p { margin: 0 0 18px; color: #5c4b53; }
 
-/* ANIM */
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-6px)}
-}
+        .hero-collage { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .hero-collage img { width: 100%; height: 140px; object-fit: cover; border-radius: 14px; box-shadow: 0 12px 30px rgba(40,15,25,0.12); }
 
-@media(max-width:900px){
-.hero-grid{grid-template-columns:1fr}
-}
-</style>
+        .section { padding: 60px 0; }
+        .section h3 { margin: 0 0 10px; font-family: 'Playfair Display', serif; color: var(--vino); font-size: 1.6rem; }
+        .section-subtitle { color: #7c5a68; margin: 0 0 18px; }
+
+        .cards { display: grid; gap: 16px; }
+        .package { background: white; border-radius: 14px; padding: 16px; box-shadow: var(--sombra); display: grid; grid-template-columns: 110px 1fr auto; gap: 12px; align-items: center; }
+        .package .list { color: #52414a; }
+        .price { font-weight: 800; color: var(--vino); }
+
+        .package-media { width: 110px; height: 110px; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 26px rgba(0,0,0,0.12); }
+        .package-media img { width: 100%; height: 100%; object-fit: cover; animation: floatSoft 6s ease-in-out infinite; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+
+        .desserts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .dessert { background: white; padding: 12px; border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.06); display: grid; gap: 8px; }
+        .dessert img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; animation: floatSoft 7s ease-in-out infinite; }
+
+        .info { background: linear-gradient(135deg,#fff8fb,#fff2f6); padding: 18px; border-radius: 12px; box-shadow: 0 12px 28px rgba(214,51,92,0.06); }
+
+        .footer { background: #2b1b22; color: #f6e9ee; padding: 36px 0 22px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .footer h5 { margin: 0 0 8px; color: #ffd7e2; }
+
+        .btn-whatsapp { position: fixed; bottom: 18px; right: 18px; background-color: var(--verde-wa); color: white; padding: 14px 18px; border-radius: 999px; font-weight: 700; box-shadow: 0 10px 22px rgba(0,0,0,0.18); z-index: 20; }
+
+        @keyframes floatSoft {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; } .hero-collage img { height: 140px; } .package { grid-template-columns: 90px 1fr; } .package-media { width: 90px; height: 90px; } }
+        @media (max-width: 620px) { .package { grid-template-columns: 1fr; } .package-media { width: 100%; height: 160px; } .price { justify-self: start; } }
+        @media (max-width: 420px) { .brand h1 { font-size: 1.1rem; } }
+
+    </style>
 </head>
-
 <body>
+    <header class="navbar">
+        <div class="container nav-inner">
+            <div class="brand">
+                <img src="images/yt.jpg" alt="Logo Y&T">
+                <div>
+                    <h1>Y&amp;T Postres y Desayunos</h1>
+                    <small>Endulzamos tus mañanas ✨</small>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#especiales">Especiales</a>
+                <a href="#paquetes">Paquetes</a>
+                <a href="#postres">Postres</a>
+                <a href="#pedidos">Pedidos</a>
+            </nav>
+        </div>
+    </header>
 
-<header class="navbar">
-<div class="container nav-inner">
-<div class="brand">
-<img src="images/yt.jpg">
-<h1>Y&T Postres</h1>
-</div>
-<nav class="nav-links">
-<a href="#paquetes">Paquetes</a>
-<a href="#postres">Postres</a>
-<a href="#pedidos">Pedidos</a>
-</nav>
-</div>
-</header>
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <h2>Desayunos y paquetes listos para regalar o consentirte</h2>
+                    <p>Elige entre nuestras cajas y paquetes artesanales — incluyen dedicatoria y todo lo necesario para una presentación especial.</p>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+                        <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=8441468858&text=Hola!%20Quisiera%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+                        <a class="btn btn-outline" href="#paquetes">Ver paquetes</a>
+                    </div>
+                </div>
+                <div class="hero-collage">
+                    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&w=800&q=80" alt="Hotcakes con frutas">
+                    <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=800&q=80" alt="Desayuno completo">
+                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800&q=80" alt="Café y pastel">
+                    <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=800&q=80" alt="Croissants y café">
+                </div>
+            </div>
+        </section>
 
-<main>
+        <section id="paquetes" class="section">
+            <div class="container">
+                <h3>Paquetes y cajas</h3>
+                <p class="section-subtitle">Todos los paquetes incluyen dedicatoria y, en cajas, listón y presentación especial.</p>
 
-<section class="hero">
-<div class="container hero-grid">
-<div>
-<h2>Desayunos listos para regalar y enamorar</h2>
-<p>Cajas artesanales con dedicatoria y presentación especial.</p>
-<a class="btn-whatsapp" href="https://api.whatsapp.com/send?phone=8441468858">Pedir por WhatsApp</a>
-</div>
-<div class="hero-collage">
-<img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929">
-<img src="https://images.unsplash.com/photo-1493770348161-369560ae357d">
-<img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0">
-<img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0">
-</div>
-</div>
-</section>
+                <div class="grid-2">
+                    <!-- Paquete 1 -->
+                    <div class="package">
+                        <div class="package-media">
+                            <img src="images/p1.PNG" alt="Paquete 1 desayuno">
+                        </div>
+                        <div>
+                            <h4>Paquete 1 — Desayuno (Charola)</h4>
+                            <ul class="list">
+                                <li>Sándwich</li>
+                                <li>Hot cakes</li>
+                                <li>Fruta con yogurt</li>
+                                <li>Jugo</li>
+                                <li>Lechera y maple</li>
+                                <li>2 Chocolates Carlos V</li>
+                                <li>Dedicatoria</li>
+                            </ul>
+                        </div>
+                        <div class="price">$300 <small>+ envío</small></div>
+                    </div>
 
-<section id="paquetes" class="section">
-<div class="container">
-<h3>Paquetes</h3>
-<div class="grid-2">
+                    <!-- Paquete 2 -->
+                    <div class="package">
+                        <div class="package-media">
+                            <img src="images/p2.PNG" alt="Paquete 2 waffles">
+                        </div>
+                        <div>
+                            <h4>Paquete 2 — Waffles</h4>
+                            <ul class="list">
+                                <li>Wafles</li>
+                                <li>Lechera y maple</li>
+                                <li>Lechita o jugo</li>
+                                <li>Dedicatoria</li>
+                            </ul>
+                        </div>
+                        <div class="price">$250 <small>+ envío</small></div>
+                    </div>
 
-<div class="package">
-<div class="package-media">
-<img src="https://images.unsplash.com/photo-1525351484163-7529414344d8">
-</div>
-<div class="package-content">
-<h4>Paquete 1 — Desayuno</h4>
-<ul>
-<li>Sándwich</li>
-<li>Hot cakes</li>
-<li>Fruta con yogurt</li>
-<li>Jugo</li>
-<li>Chocolates</li>
-</ul>
-<div class="price">$300 + envío</div>
-</div>
-</div>
+                    <!-- Paquete 3 -->
+                    <div class="package">
+                        <div class="package-media">
+                            <img src="images/p3.PNG" alt="Paquete 3 caja desayuno">
+                        </div>
+                        <div>
+                            <h4>Paquete 3 — Caja Desayuno</h4>
+                            <ul class="list">
+                                <li>Croissant de jamón con queso</li>
+                                <li>Jugo de naranja</li>
+                                <li>Fruta con yogurt</li>
+                                <li>Wafle</li>
+                                <li>Lechera y maple</li>
+                                <li>Dedicatoria</li>
+                                <li>Caja con listón</li>
+                                <li>Termo</li>
+                            </ul>
+                        </div>
+                        <div class="price">$450 <small>+ envío</small></div>
+                    </div>
 
-<div class="package">
-<div class="package-media">
-<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
-</div>
-<div class="package-content">
-<h4>Paquete 2 — Waffles</h4>
-<ul>
-<li>Waffles</li>
-<li>Lechera y maple</li>
-<li>Jugo o leche</li>
-</ul>
-<div class="price">$250 + envío</div>
-</div>
-</div>
+                    <!-- Paquete 4 -->
+                    <div class="package">
+                        <div class="package-media">
+                            <img src="images/p4.PNG" alt="Paquete 4 panini">
+                        </div>
+                        <div>
+                            <h4>Paquete 4 — Panini & Más</h4>
+                            <ul class="list">
+                                <li>Panini y ensalada</li>
+                                <li>Fruta con yogurt</li>
+                                <li>Minis hot cakes</li>
+                                <li>Lechera y maple</li>
+                                <li>Jugo de naranja</li>
+                                <li>Vaso de cristal</li>
+                                <li>Dedicatoria</li>
+                                <li>Caja con listón</li>
+                            </ul>
+                        </div>
+                        <div class="price">$500 <small>+ envío</small></div>
+                    </div>
 
-<div class="package">
-<div class="package-media">
-<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff">
-</div>
-<div class="package-content">
-<h4>Paquete 3 — Caja Desayuno</h4>
-<ul>
-<li>Croissant</li>
-<li>Fruta</li>
-<li>Waffle</li>
-<li>Termo</li>
-</ul>
-<div class="price">$450 + envío</div>
-</div>
-</div>
+                    <!-- Paquete 5 -->
+                    <div class="package">
+                        <div class="package-media">
+                            <img src="images/p5.PNG" alt="Paquete 5 croissant">
+                        </div>
+                        <div>
+                            <h4>Paquete 5 — Croissant Salado</h4>
+                            <ul class="list">
+                                <li>Croissant salado</li>
+                                <li>Fruta con yogurt y granola</li>
+                                <li>Minis hot cakes</li>
+                                <li>Lechera y maple</li>
+                                <li>Jugo de naranja</li>
+                                <li>Vaso de cristal</li>
+                                <li>Dedicatoria</li>
+                                <li>Caja con listón</li>
+                            </ul>
+                        </div>
+                        <div class="price">$490 <small>+ envío</small></div>
+                    </div>
 
-</div>
-</div>
-</section>
+                </div>
+            </div>
+        </section>
 
-<section id="postres" class="section">
-<div class="container">
-<h3>Postres y complementos</h3>
-<div class="desserts">
+        <section id="postres" class="section">
+            <div class="container">
+                <h3>Postres y complementos</h3>
+                <p class="section-subtitle">Dulces para acompañar o regalar.</p>
+                <div class="desserts">
+                    <div class="dessert">
+                        <img src="images/flan.PNG" alt="Flan napolitano">
+                        <strong>Flan napolitano</strong>
+                        <div style="margin-top:8px;font-weight:700;color:var(--vino);">$180</div>
+                    </div>
+                    <div class="dessert">
+                        <img src="images/manzana.PNG" alt="Manzana cubierta">
+                        <strong>Manzana cubierta (con 4 complementos)</strong>
+                        <div style="margin-top:8px;font-weight:700;color:var(--vino);">$70</div>
+                    </div>
+                    <div class="dessert">
+                        <img src="images/cupcakes.PNG" alt="Caja 2 cupcakes">
+                        <strong>Caja 2 Cupcakes</strong>
+                        <div style="margin-top:8px;font-weight:700;color:var(--vino);">$70</div>
+                    </div>
+                    <div class="dessert">
+                        <img src="images/cupcakes4.PNG" alt="Caja 4 cupcakes">
+                        <strong>Caja 4 Cupcakes</strong>
+                        <div style="margin-top:8px;font-weight:700;color:var(--vino);">$150</div>
+                    </div>
+                    <div class="dessert">
+                        <img src="images/botella%20vino.PNG" alt="Botella de vino decorada">
+                        <strong>Botella de vino decorada</strong>
+                        <div style="margin-top:8px;font-weight:700;color:var(--vino);">$280</div>
+                    </div>
+                    <div class="dessert">
+                        <img src="images/lechasabor.PNG" alt="Leche sabor chocolate">
+                        <strong>Leche sabor chocolate</strong>
+                        <div style="margin-top:8px;font-weight:700;color:var(--vino);">$20</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<div class="dessert">
-<img src="https://images.unsplash.com/photo-1599785209707-28d43b6b1d87">
-<div class="dessert-content">
-<strong>Flan napolitano</strong>
-<span>$180</span>
-</div>
-</div>
+        <section id="pedidos" class="section">
+            <div class="container">
+                <h3>Pedidos y entregas</h3>
+                <p class="section-subtitle">Información importante para tus pedidos.</p>
 
-<div class="dessert">
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
-<div class="dessert-content">
-<strong>Cupcakes</strong>
-<span>$70 / $150</span>
-</div>
-</div>
+                <div class="grid-2">
+                    <div class="info">
+                        <h4>Contactos</h4>
+                        <p>Pedidos vía WhatsApp a cualquiera de los teléfonos:</p>
+                        <p style="margin:6px 0;font-weight:700">844 146 8858 — <a href="https://api.whatsapp.com/send?phone=8441468858&text=Hola!%20Quisiera%20hacer%20un%20pedido" target="_blank">Enviar WhatsApp</a></p>
+                        <p style="margin:6px 0;font-weight:700">844 174 2261 — <a href="https://api.whatsapp.com/send?phone=8441742261&text=Hola!%20Quisiera%20hacer%20un%20pedido" target="_blank">Enviar WhatsApp</a></p>
+                        <p style="margin-top:8px">Domicilio: Ntra. Sra. de Fátima, San Leonardo #183</p>
+                    </div>
 
-<div class="dessert">
-<img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc">
-<div class="dessert-content">
-<strong>Vino decorado</strong>
-<span>$280</span>
-</div>
-</div>
+                    <div class="info">
+                        <h4>Pagos y condiciones</h4>
+                        <ul style="margin:0;padding-left:18px;color:#52414a;">
+                            <li>Pagos vía transferencia, depósito o en efectivo al domicilio (se concretan por WhatsApp).</li>
+                            <li>Los pedidos se separan con 2 días de anticipación con 50% de anticipo.</li>
+                            <li>Horario de entrega: Lunes a Sábado de 9:00 a.m. a 2:00 p.m. (si deseas otro horario, pregunta por disponibilidad).</li>
+                            <li>No se aceptan cancelaciones ni devoluciones.</li>
+                            <li>Si al momento de entregar no reciben el pedido, puede reprogramarse con un costo adicional de envío.</li>
+                        </ul>
+                    </div>
+                </div>
 
-</div>
-</div>
-</section>
+            </div>
+        </section>
+    </main>
 
-<section id="pedidos" class="section">
-<div class="container grid-2">
-<div class="info">
-<h4>Pedidos</h4>
-<p>WhatsApp: 844 146 8858 / 844 174 2261</p>
-<p>Anticipo 50% — 2 días antes</p>
-</div>
-<div class="info">
-<h4>Horario</h4>
-<p>Lunes a Sábado</p>
-<p>9:00 a.m. – 2:00 p.m.</p>
-</div>
-</div>
-</section>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h5>Y&amp;T Postres y Desayunos</h5>
+                <p>Saltillo • Pedidos con 2 días de anticipación.</p>
+            </div>
+            <div>
+                <h5>Horario</h5>
+                <p>Lunes a Sábado: 9:00 a 14:00</p>
+                <p>Si requieres otro horario, consúltanos por WhatsApp.</p>
+            </div>
+            <div>
+                <h5>Contacto</h5>
+                <p>WhatsApp: 844 146 8858 / 844 174 2261</p>
+                <p>Instagram / Facebook: @ytpostres</p>
+            </div>
+        </div>
+    </footer>
 
-</main>
-
-<footer class="footer">
-<div class="container footer-grid">
-<div>
-<h5>Y&T Postres</h5>
-<p>Saltillo</p>
-</div>
-<div>
-<h5>Redes</h5>
-<p>@ytpostres</p>
-</div>
-</div>
-</footer>
+    <a class="btn-whatsapp" href="https://api.whatsapp.com/send?phone=8441468858&text=Hola!%20Quisiera%20hacer%20un%20pedido" target="_blank" rel="noopener">WhatsApp</a>
 
 </body>
 </html>
