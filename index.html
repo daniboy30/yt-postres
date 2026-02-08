@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y&T Postres y Desayunos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa-logo: #f7a8b8;
+            --vino-logo: #d6335c;
+            --dorado: #c5a059;
+        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            background-color: #fffafb;
+            color: #444;
+            text-align: center;
+        }
+        header { padding: 20px; }
+        .logo { max-width: 200px; border-radius: 50%; }
+        
+        .promo-14 {
+            background-color: var(--rosa-logo);
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 15px;
+            border: 2px dashed white;
+        }
+
+        .menu-container { padding: 20px; max-width: 600px; margin: auto; }
+        .producto {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+        .precio { font-weight: bold; color: var(--vino-logo); }
+
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        h1, h2 { font-family: 'Dancing Script', cursive; color: var(--vino-logo); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="yt.jpg" alt="Logo Y&T" class="logo">
+        <p><em>"Endulzamos tus mañanas"</em></p>
+    </header>
+
+    <section class="promo-14">
+        <h2>Especial de San Valentín ❤️</h2>
+        <p>Paquete Enamorados: 2 Croissants + 2 Cafés + Postre por <strong>$250</strong></p>
+    </section>
+
+    <section class="menu-container">
+        <h2>Nuestro Menú</h2>
+        
+        <div class="producto">
+            <span>Desayuno Tradicional</span>
+            <span class="precio">$120</span>
+        </div>
+        <div class="producto">
+            <span>Cupcake Decorado (Pieza)</span>
+            <span class="precio">$35</span>
+        </div>
+        <div class="producto">
+            <span>Charola de Fruta y Yogurt</span>
+            <span class="precio">$85</span>
+        </div>
+        </section>
+
+    <a href="https://api.whatsapp.com/send?phone=521234567890&text=Hola!%20Me%20gustaría%20hacer%20un%20pedido%20para%20este%2014%20de%20febrero" class="btn-whatsapp" target="_blank" rel="noopener">
+        ¡Pide por WhatsApp! ☕
+    </a>
+
+</body>
+</html>
