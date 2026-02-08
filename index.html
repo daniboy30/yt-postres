@@ -73,14 +73,18 @@
         .section-subtitle { color: #7c5a68; margin: 0 0 18px; }
 
         .cards { display: grid; gap: 16px; }
-        .package { background: white; border-radius: 14px; padding: 16px; box-shadow: var(--sombra); display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; }
+        .package { background: white; border-radius: 14px; padding: 16px; box-shadow: var(--sombra); display: grid; grid-template-columns: 110px 1fr auto; gap: 12px; align-items: center; }
         .package .list { color: #52414a; }
         .price { font-weight: 800; color: var(--vino); }
 
+        .package-media { width: 110px; height: 110px; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 26px rgba(0,0,0,0.12); }
+        .package-media img { width: 100%; height: 100%; object-fit: cover; animation: floatSoft 6s ease-in-out infinite; }
+
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
 
-        .desserts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-        .dessert { background: white; padding: 12px; border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.06); }
+        .desserts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .dessert { background: white; padding: 12px; border-radius: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.06); display: grid; gap: 8px; }
+        .dessert img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; animation: floatSoft 7s ease-in-out infinite; }
 
         .info { background: linear-gradient(135deg,#fff8fb,#fff2f6); padding: 18px; border-radius: 12px; box-shadow: 0 12px 28px rgba(214,51,92,0.06); }
 
@@ -90,7 +94,13 @@
 
         .btn-whatsapp { position: fixed; bottom: 18px; right: 18px; background-color: var(--verde-wa); color: white; padding: 14px 18px; border-radius: 999px; font-weight: 700; box-shadow: 0 10px 22px rgba(0,0,0,0.18); z-index: 20; }
 
-        @media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; } .hero-collage img { height: 140px; } }
+        @keyframes floatSoft {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; } .hero-collage img { height: 140px; } .package { grid-template-columns: 90px 1fr; } .package-media { width: 90px; height: 90px; } }
+        @media (max-width: 620px) { .package { grid-template-columns: 1fr; } .package-media { width: 100%; height: 160px; } .price { justify-self: start; } }
         @media (max-width: 420px) { .brand h1 { font-size: 1.1rem; } }
 
     </style>
@@ -143,7 +153,7 @@
                     <!-- Paquete 1 -->
                     <div class="package">
                         <div class="package-media">
-                            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80" alt="Desayuno con hot cakes y fruta">
+                            <img src="images/p1.PNG" alt="Paquete 1 desayuno">
                         </div>
                         <div>
                             <h4>Paquete 1 — Desayuno (Charola)</h4>
@@ -163,7 +173,7 @@
                     <!-- Paquete 2 -->
                     <div class="package">
                         <div class="package-media">
-                            <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=80" alt="Waffles con fruta y miel">
+                            <img src="images/p2.PNG" alt="Paquete 2 waffles">
                         </div>
                         <div>
                             <h4>Paquete 2 — Waffles</h4>
@@ -180,7 +190,7 @@
                     <!-- Paquete 3 -->
                     <div class="package">
                         <div class="package-media">
-                            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" alt="Caja de desayuno con croissant">
+                            <img src="images/p3.PNG" alt="Paquete 3 caja desayuno">
                         </div>
                         <div>
                             <h4>Paquete 3 — Caja Desayuno</h4>
@@ -201,7 +211,7 @@
                     <!-- Paquete 4 -->
                     <div class="package">
                         <div class="package-media">
-                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Panini con ensalada">
+                            <img src="images/p4.PNG" alt="Paquete 4 panini">
                         </div>
                         <div>
                             <h4>Paquete 4 — Panini & Más</h4>
@@ -222,7 +232,7 @@
                     <!-- Paquete 5 -->
                     <div class="package">
                         <div class="package-media">
-                            <img src="https://images.unsplash.com/photo-1604908554164-8e6f1a9cd8d4?auto=format&fit=crop&w=800&q=80" alt="Croissant salado con desayuno">
+                            <img src="images/p5.PNG" alt="Paquete 5 croissant">
                         </div>
                         <div>
                             <h4>Paquete 5 — Croissant Salado</h4>
@@ -250,26 +260,32 @@
                 <p class="section-subtitle">Dulces para acompañar o regalar.</p>
                 <div class="desserts">
                     <div class="dessert">
+                        <img src="images/flan.PNG" alt="Flan napolitano">
                         <strong>Flan napolitano</strong>
                         <div style="margin-top:8px;font-weight:700;color:var(--vino);">$180</div>
                     </div>
                     <div class="dessert">
+                        <img src="images/manzana.PNG" alt="Manzana cubierta">
                         <strong>Manzana cubierta (con 4 complementos)</strong>
                         <div style="margin-top:8px;font-weight:700;color:var(--vino);">$70</div>
                     </div>
                     <div class="dessert">
+                        <img src="images/cupcakes.PNG" alt="Caja 2 cupcakes">
                         <strong>Caja 2 Cupcakes</strong>
                         <div style="margin-top:8px;font-weight:700;color:var(--vino);">$70</div>
                     </div>
                     <div class="dessert">
+                        <img src="images/cupcakes4.PNG" alt="Caja 4 cupcakes">
                         <strong>Caja 4 Cupcakes</strong>
                         <div style="margin-top:8px;font-weight:700;color:var(--vino);">$150</div>
                     </div>
                     <div class="dessert">
+                        <img src="images/botella%20vino.PNG" alt="Botella de vino decorada">
                         <strong>Botella de vino decorada</strong>
                         <div style="margin-top:8px;font-weight:700;color:var(--vino);">$280</div>
                     </div>
                     <div class="dessert">
+                        <img src="images/lechasabor.PNG" alt="Leche sabor chocolate">
                         <strong>Leche sabor chocolate</strong>
                         <div style="margin-top:8px;font-weight:700;color:var(--vino);">$20</div>
                     </div>
